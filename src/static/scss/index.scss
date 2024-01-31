@@ -96,7 +96,11 @@ p a:hover {
   }
 
   .content {
-    width: calc(100% - 224px);
+    width: 100%;
+
+    &.active {
+      width: calc(100% - 224px);
+    }
   }
 }
 
@@ -213,6 +217,116 @@ p a:hover {
         font-weight: 600;
         color: var.$light;
       }
+    }
+  }
+}
+
+// Header
+.header {
+  width: 100%;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var.$border-color;
+
+  .title {
+    width: 30%;
+    h1 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var.$dark;
+      text-transform: capitalize;
+    }
+  }
+
+  .search-form {
+    width: 40%;
+    border: 1px solid var.$border-color;
+    background: var.$light-alt;
+    padding: 7px 10px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      color: #808080;
+    }
+
+    input {
+      border: 0;
+      outline: 0;
+      background: transparent;
+      font-size: 14px;
+      font-weight: 500;
+      color: var.$dark-alt;
+      width: calc(100% - 30px);
+    }
+  }
+
+  .actions {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .help-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var.$dark-alt;
+
+      span {
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+      }
+
+      &::after {
+        content: "|";
+        margin: 0 5px 0 20px;
+        color: var.$light-alt;
+      }
+    }
+
+    .sidebar-toggle,
+    .download-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50px;
+      background: var.$light-alt;
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 10px;
+      color: var.$dark-alt;
+      transition: 0.5s ease all;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      &:hover {
+        background: var.$secondary;
+        color: var.$light;
+      }
+    }
+    .sidebar-toggle {
+      background: rgba(20, 110, 180, 0.1);
+      color: var.$primary;
     }
   }
 }

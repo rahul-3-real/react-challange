@@ -3,7 +3,7 @@ import { IoSearchOutline, IoDownloadOutline } from "react-icons/io5";
 import { HiBars3 } from "react-icons/hi2";
 import { BiMessageSquareError } from "react-icons/bi";
 
-const Navbar = () => {
+const Navbar = ({ handleDasboardToggle }) => {
   const location = useLocation();
 
   const linksData = [
@@ -34,14 +34,14 @@ const Navbar = () => {
         <input type="text" placeholder="Search features, tutorials, etc." />
       </form>
       <div className="actions">
-        <Link to="/">
+        <Link to="/" className="help-btn">
           <BiMessageSquareError />
           <span>Need help?</span>
         </Link>
-        <button>
+        <button className="download-btn">
           <IoDownloadOutline />
         </button>
-        <button>
+        <button className="sidebar-toggle" onClick={handleDasboardToggle}>
           <HiBars3 />
         </button>
       </div>
