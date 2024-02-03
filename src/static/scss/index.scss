@@ -81,6 +81,12 @@ p a:hover {
   color: var.$primary;
 }
 
+// Container
+.container {
+  padding: 0 30px;
+  width: 100%;
+}
+
 // Main
 .main {
   width: 100%;
@@ -91,8 +97,11 @@ p a:hover {
 
   .sidebar {
     width: 224px;
+    height: 100vh;
     background: var.$secondary;
     padding: 15px 15px 5px;
+    position: sticky;
+    top: 0;
   }
 
   .content {
@@ -224,7 +233,7 @@ p a:hover {
 // Header
 .header {
   width: 100%;
-  padding: 10px 15px;
+  padding: 10px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -328,5 +337,117 @@ p a:hover {
       background: rgba(20, 110, 180, 0.1);
       color: var.$primary;
     }
+  }
+}
+
+// Title
+.title-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 30px 0;
+
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var.$dark;
+  }
+
+  select {
+    padding: 10px;
+    background: var.$light;
+    border: 1px solid var.$light-alt;
+    border-radius: 5px;
+    appearance: none;
+    width: 150px;
+    font-size: 14px;
+    font-weight: 400;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 5px;
+  }
+}
+
+// Cards
+.cards {
+  margin: 0 0 30px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+  .card {
+    border: 1px solid var.$light-alt;
+    background: var.$light;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 20px 0 #0001;
+
+    .card-body {
+      padding: 20px;
+
+      h6 {
+        font-size: 16px;
+        font-weight: 400;
+        color: var.$dark-alt;
+        margin-bottom: 20px;
+      }
+
+      h5 {
+        font-size: 30px;
+        font-weight: 600;
+        color: var.$dark;
+      }
+    }
+
+    .card-footer {
+      padding: 20px;
+      border-top: 1px solid var.$light-alt;
+    }
+
+    &.active {
+      background: var.$primary;
+      .card-footer {
+        border-color: #fff3;
+      }
+      h5,
+      h6 {
+        color: var.$light;
+      }
+    }
+  }
+}
+
+// Table
+table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+
+  th {
+    background: var.$light-alt;
+  }
+
+  td {
+    span {
+      width: 5px;
+      height: 5px;
+      border-radius: 5px;
+      margin: 0 5px 3px;
+      background: #808080;
+      display: inline-block;
+
+      &.success {
+        background: green;
+      }
+    }
+  }
+
+  td,
+  th {
+    border: 1px solid #ddd;
+    padding: 10px;
   }
 }
